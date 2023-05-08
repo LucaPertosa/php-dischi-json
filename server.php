@@ -6,7 +6,7 @@ $json_array = json_decode($string_value, true);
 
 // Preparazione della risposta
 $response = [
-    "results" => $$json_array,
+    "results" => $json_array,
     "success" => true
 ];
 header('Content-Type: application/json');
