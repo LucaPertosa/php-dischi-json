@@ -24,12 +24,37 @@
                     <h1>Discografia Boolean</h1>
                 </div>
                 <div class="col-4 my-3" v-for="disk in dischi">
-                    <div class="card">
-                        <img :src="disk.poster" class="card-img-top" alt="...">
+                    <div class="card" @click="get_diskinfo(disk)">
+                        <img :src="disk.poster" class="card-img-top" :alt="disk.title">
                         <div class="card-body text-center">
                             <h5 class="card-title">{{disk.title}}</h5>
                             <p class="card-text">{{disk.author}}</p>
-                            <p class="card-text"><small class="text-muted">{{disk.year}}</small></p>
+                            <p class="card-text">
+                                <small class="text-muted">{{disk.year}}</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ms_overlay" v-if="curr_disk !== '' " @click="close_diskinfo">
+            <div class="container d-flex align-items-center justify-content-center h-100">
+                <div class="row w-100">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="row g-0">
+                                <div class="col-5">
+                                    <img :src="curr_disk.poster" class="img-fluid rounded-start w-100" :alt="curr_disk.title">
+                                </div>
+                                <div class="col-7">
+                                    <div class="card-body m-5">
+                                        <h5 class="card-title">{{curr_disk.title}}</h5>
+                                        <p class="card-text">Autore: {{curr_disk.author}}</p>
+                                        <p class="card-text">Anno di pubblicazione: {{curr_disk.year}}</p>
+                                        <p class="card-text">Genere: {{curr_disk.genre}}</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

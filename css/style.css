@@ -1,4 +1,23 @@
+.container {
+    height: 100vh;
+}
+
 .card {
     height: 100%;
-    
+
+}
+.ms_overlay .card-text {
+    font-size: 2rem;
+}
+.ms_overlay .card-title {
+    font-size: 3rem;
+}
+.ms_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
 }
